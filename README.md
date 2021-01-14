@@ -1,2 +1,2 @@
-# IHaskell
+# IHaskellExperiments
 experiments with IHaskell
