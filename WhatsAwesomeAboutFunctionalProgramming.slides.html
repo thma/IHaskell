@@ -13226,10 +13226,10 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>“functional programming is a programming paradigm where programs are constructed 
-by applying and composing functions. It is a declarative programming paradigm in which function definitions 
-are trees of expressions that each return a value, rather than a sequence of imperative statements which change 
-the state of the program.”</p>
+<blockquote><p>“functional programming is a programming paradigm where programs are constructed 
+by applying and composing functions. It is a declarative programming paradigm in which function definitions 
+are trees of expressions that each return a value, rather than a sequence of imperative statements which change 
+the state of the program.”</p>
 </blockquote>
 <ul>
 <li>What does that mean?</li>
@@ -13242,13 +13242,13 @@ the state of the program.”</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Functions-are-first-class-citizens">Functions are first class citizens<a class="anchor-link" href="#Functions-are-first-class-citizens">&#182;</a></h1><p>Wikipedia: “In functional programming (<strong>FP</strong>), functions are treated as first-class citizens, meaning that</p>
+<h1 id="Functions-are-first-class-citizens">Functions are first class citizens<a class="anchor-link" href="#Functions-are-first-class-citizens">&#182;</a></h1><p>Wikipedia: “In functional programming (<strong>FP</strong>), functions are treated as first-class citizens, meaning that</p>
 <ol>
-<li>they can be bound to names (including local identifiers),</li>
-<li>passed as arguments,</li>
-<li>and returned from other functions, just as any other data type can.</li>
+<li>they can be bound to names (including local identifiers),</li>
+<li>passed as arguments,</li>
+<li>and returned from other functions, just as any other data type can.</li>
 </ol>
-<p>This allows programs to be written in a declarative and composable style, where small functions are combined in a modular manner.”</p>
+<p>This allows programs to be written in a declarative and composable style, where small functions are combined in a modular manner.”</p>
 <p>As this is at the core of FP, we’ll have a closer look at each of these 3 properties.
 All code-examples in this presentation are in the <a href="https://www.haskell.org/">Haskell language</a>.</p>
 
@@ -13272,7 +13272,7 @@ All code-examples in this presentation are in the <a href="https://www.haskell.o
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="c1">-- define a function `square`: take an Integer argument and compute its square</span>
@@ -13335,15 +13335,15 @@ All code-examples in this presentation are in the <a href="https://www.haskell.o
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="c1">-- predicate functions on integers</span>
-<span class="nf">even</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
-<span class="nf">even</span> <span class="n">n</span> <span class="ow">=</span>  <span class="n">n</span> <span class="p">`</span><span class="n">rem</span><span class="p">`</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="c1">-- predicate functions on integers</span>
+<span class="nf">even</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+<span class="nf">even</span> <span class="n">n</span> <span class="ow">=</span>  <span class="n">n</span> <span class="p">`</span><span class="n">rem</span><span class="p">`</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
 
-<span class="nf">odd</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
-<span class="nf">odd</span> <span class="n">n</span> <span class="ow">=</span>  <span class="n">n</span> <span class="p">`</span><span class="n">rem</span><span class="p">`</span> <span class="mi">2</span> <span class="o">/=</span> <span class="mi">0</span>
+<span class="nf">odd</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+<span class="nf">odd</span> <span class="n">n</span> <span class="ow">=</span>  <span class="n">n</span> <span class="p">`</span><span class="n">rem</span><span class="p">`</span> <span class="mi">2</span> <span class="o">/=</span> <span class="mi">0</span>
 </pre></div>
 
     </div>
@@ -13353,20 +13353,20 @@ All code-examples in this presentation are in the <a href="https://www.haskell.o
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">ifOddDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifOddDouble</span> <span class="n">n</span> <span class="ow">=</span> 
-  <span class="kr">if</span> <span class="n">odd</span> <span class="n">n</span>
-    <span class="kr">then</span> <span class="n">double</span> <span class="n">n</span>
-    <span class="kr">else</span> <span class="n">n</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">ifOddDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifOddDouble</span> <span class="n">n</span> <span class="ow">=</span> 
+  <span class="kr">if</span> <span class="n">odd</span> <span class="n">n</span>
+    <span class="kr">then</span> <span class="n">double</span> <span class="n">n</span>
+    <span class="kr">else</span> <span class="n">n</span>
 
-<span class="nf">ifOddSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifOddSquare</span> <span class="n">n</span> <span class="ow">=</span>
-    <span class="kr">if</span> <span class="n">odd</span> <span class="n">n</span>
-      <span class="kr">then</span> <span class="n">square</span> <span class="n">n</span>
-      <span class="kr">else</span> <span class="n">n</span>
+<span class="nf">ifOddSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifOddSquare</span> <span class="n">n</span> <span class="ow">=</span>
+    <span class="kr">if</span> <span class="n">odd</span> <span class="n">n</span>
+      <span class="kr">then</span> <span class="n">square</span> <span class="n">n</span>
+      <span class="kr">else</span> <span class="n">n</span>
     
 <span class="nf">ifOddDouble</span> <span class="mi">7</span>
 <span class="nf">ifOddSquare</span> <span class="mi">7</span>
@@ -13412,20 +13412,20 @@ All code-examples in this presentation are in the <a href="https://www.haskell.o
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">ifOdd</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifOdd</span> <span class="n">growthFunction</span> <span class="n">n</span> <span class="ow">=</span>
-  <span class="kr">if</span> <span class="n">odd</span> <span class="n">n</span>
-    <span class="kr">then</span> <span class="n">growthFunction</span> <span class="n">n</span>
-    <span class="kr">else</span> <span class="n">n</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">ifOdd</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifOdd</span> <span class="n">growthFunction</span> <span class="n">n</span> <span class="ow">=</span>
+  <span class="kr">if</span> <span class="n">odd</span> <span class="n">n</span>
+    <span class="kr">then</span> <span class="n">growthFunction</span> <span class="n">n</span>
+    <span class="kr">else</span> <span class="n">n</span>
 
-<span class="nf">ifOddDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifOddDouble</span> <span class="ow">=</span> <span class="n">ifOdd</span> <span class="n">double</span>
+<span class="nf">ifOddDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifOddDouble</span> <span class="ow">=</span> <span class="n">ifOdd</span> <span class="n">double</span>
 
-<span class="nf">ifOddSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifOddSquare</span> <span class="ow">=</span> <span class="n">ifOdd</span> <span class="n">square</span>
+<span class="nf">ifOddSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifOddSquare</span> <span class="ow">=</span> <span class="n">ifOdd</span> <span class="n">square</span>
 
 <span class="nf">ifOddDouble</span> <span class="mi">7</span>
 <span class="nf">ifOddSquare</span> <span class="mi">7</span>
@@ -13475,7 +13475,7 @@ All code-examples in this presentation are in the <a href="https://www.haskell.o
 <p><code>ifOdd</code> is called a <strong>higher order function</strong>,
 as it accepts another function as argument.</p>
 <p>Great, but now the customer wants functions that only act on even numbers.</p>
-<p>A function <code>ifEven :: (Integer -&gt; Integer) -&gt; Integer -&gt; Integer</code>
+<p>A function <code>ifEven :: (Integer -&gt; Integer) -&gt; Integer -&gt; Integer</code>
 would have to repeat most of the existing code.</p>
 <p>We don‘t want to repeat ourselves, so we must also be able to pass in the predicate function…</p>
 
@@ -13485,14 +13485,14 @@ would have to repeat most of the existing code.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="OK,-Time-for-some-refactoring-!">OK, Time for some refactoring !<a class="anchor-link" href="#OK,-Time-for-some-refactoring-!">&#182;</a></h1><div class="highlight"><pre><span></span><span class="nf">ifPredGrow</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span>     <span class="c1">-- a predicate function (e.g. even)</span>
-           <span class="ow">-&gt;</span> <span class="p">(</span><span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span><span class="p">)</span>  <span class="c1">-- a growth function (e.g. double)</span>
-           <span class="ow">-&gt;</span> <span class="kt">Integer</span>               <span class="c1">-- the input number</span>
-           <span class="ow">-&gt;</span> <span class="kt">Integer</span>               <span class="c1">-- the output number</span>
-<span class="nf">ifPredGrow</span> <span class="n">predicate</span> <span class="n">growthFunction</span> <span class="n">n</span> <span class="ow">=</span>
-  <span class="kr">if</span> <span class="n">predicate</span> <span class="n">n</span>
-    <span class="kr">then</span> <span class="n">growthFunction</span> <span class="n">n</span>
-    <span class="kr">else</span> <span class="n">n</span>
+<h1 id="OK,-Time-for-some-refactoring-!">OK, Time for some refactoring !<a class="anchor-link" href="#OK,-Time-for-some-refactoring-!">&#182;</a></h1><div class="highlight"><pre><span></span><span class="nf">ifPredGrow</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span>     <span class="c1">-- a predicate function (e.g. even)</span>
+           <span class="ow">-&gt;</span> <span class="p">(</span><span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span><span class="p">)</span>  <span class="c1">-- a growth function (e.g. double)</span>
+           <span class="ow">-&gt;</span> <span class="kt">Integer</span>               <span class="c1">-- the input number</span>
+           <span class="ow">-&gt;</span> <span class="kt">Integer</span>               <span class="c1">-- the output number</span>
+<span class="nf">ifPredGrow</span> <span class="n">predicate</span> <span class="n">growthFunction</span> <span class="n">n</span> <span class="ow">=</span>
+  <span class="kr">if</span> <span class="n">predicate</span> <span class="n">n</span>
+    <span class="kr">then</span> <span class="n">growthFunction</span> <span class="n">n</span>
+    <span class="kr">else</span> <span class="n">n</span>
 </pre></div>
 
 </div>
@@ -13501,14 +13501,14 @@ would have to repeat most of the existing code.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="nf">ifEvenDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifEvenDouble</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">ifPredGrow</span> <span class="n">even</span> <span class="n">double</span> <span class="n">n</span>
+<div class="highlight"><pre><span></span><span class="nf">ifEvenDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifEvenDouble</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">ifPredGrow</span> <span class="n">even</span> <span class="n">double</span> <span class="n">n</span>
 
-<span class="nf">ifEvenSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifEvenSquare</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">ifPredGrow</span> <span class="n">even</span> <span class="n">square</span> <span class="n">n</span>
+<span class="nf">ifEvenSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifEvenSquare</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">ifPredGrow</span> <span class="n">even</span> <span class="n">square</span> <span class="n">n</span>
 
-<span class="nf">ifOddDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">ifOddDouble</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">ifPredGrow</span> <span class="n">odd</span> <span class="n">double</span> <span class="n">n</span>
+<span class="nf">ifOddDouble</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">ifOddDouble</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">ifPredGrow</span> <span class="n">odd</span> <span class="n">double</span> <span class="n">n</span>
 </pre></div>
 
 </div>
@@ -13557,7 +13557,7 @@ would have to repeat most of the existing code.</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="err">∘</span><span class="p">)</span> <span class="ow">::</span> <span class="p">(</span><span class="n">b</span> <span class="ow">-&gt;</span> <span class="n">c</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">c</span>
@@ -13579,17 +13579,17 @@ would have to repeat most of the existing code.</p>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">square</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">square</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">^</span> <span class="mi">2</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">square</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">square</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">^</span> <span class="mi">2</span>
 
-<span class="nf">add1</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">add1</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nf">add1</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">add1</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="nf">add1AfterSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">add1AfterSquare</span> <span class="ow">=</span> <span class="n">add1</span> <span class="err">∘</span> <span class="n">square</span>
+<span class="nf">add1AfterSquare</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">add1AfterSquare</span> <span class="ow">=</span> <span class="n">add1</span> <span class="err">∘</span> <span class="n">square</span>
 
 <span class="nf">add1AfterSquare</span> <span class="mi">3</span>
 </pre></div>
@@ -13636,9 +13636,9 @@ would have to repeat most of the existing code.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1>Returning functions as values (3)<br>B. Partial application</h1>
-<div class="highlight"><pre><span></span><span class="c1">-- function adding two numbers (add 2 3 -&gt; 5)</span>
-<span class="nf">add</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span> 
-<span class="nf">add</span> <span class="n">a</span> <span class="n">b</span> <span class="ow">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight"><pre><span></span><span class="c1">-- function adding two numbers (add 2 3 -&gt; 5)</span>
+<span class="nf">add</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span> 
+<span class="nf">add</span> <span class="n">a</span> <span class="n">b</span> <span class="ow">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
 <p>The type signature can be read as: "A function taking an <code>Integer</code> argument and returning a function of type <code>Integer -&gt; Integer"</code>.</p>
 <p>Sounds weird? But that's exactly what most functional languages do internally. So if we call <code>add 2 3</code>, first <code>add</code> is applied to <code>2</code> which returns a new function of type <code>Integer -&gt; Integer</code> which is then applied to 3.</p>
@@ -13649,11 +13649,11 @@ would have to repeat most of the existing code.</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">add5</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">add5</span> <span class="ow">=</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="mi">5</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">add5</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">add5</span> <span class="ow">=</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="mi">5</span>
 
 <span class="nf">add5</span> <span class="mi">7</span>
 </pre></div>
@@ -13699,11 +13699,11 @@ would have to repeat most of the existing code.</p>
 <span class="nf">n</span><span class="o">!</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">!</span>
 </pre></div>
 <p>With our current knowledge we could implement it as follows (where the type <code>Natural</code> represents $\mathbb{N}_0$):</p>
-<div class="highlight"><pre><span></span><span class="nf">fac</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span>
-<span class="nf">fac</span> <span class="n">n</span> <span class="ow">=</span>
-  <span class="kr">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span>
-    <span class="kr">then</span> <span class="mi">1</span>
-    <span class="kr">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nf">fac</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span>
+<span class="nf">fac</span> <span class="n">n</span> <span class="ow">=</span>
+  <span class="kr">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="kr">then</span> <span class="mi">1</span>
+    <span class="kr">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 <p>Most functional languages provide pattern matching, which allows to declare the function much closer to the original mathematical definition as a set of equations:</p>
 
@@ -13712,14 +13712,14 @@ would have to repeat most of the existing code.</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">import</span> <span class="nn">GHC.Natural</span>
 
-<span class="nf">fac</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span>
-<span class="nf">fac</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>                 
-<span class="nf">fac</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">fac</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span>
+<span class="nf">fac</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>                 
+<span class="nf">fac</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="nf">fac</span> <span class="mi">10</span>
 </pre></div>
@@ -13764,9 +13764,9 @@ would have to repeat most of the existing code.</p>
 <h1 id="Immutability,-purity-&amp;-equational-reasoning">Immutability, purity &amp; equational reasoning<a class="anchor-link" href="#Immutability,-purity-&amp;-equational-reasoning">&#182;</a></h1><p>FP languages provide <strong>immutability</strong>. That is, no value can ever be changed.
 There are thus no assigments operations. But what about the <code>=</code> sign? The <code>=</code> sign is not an assigment, but rather a definition as in mathematics, which declares two things to be identical.</p>
 <p>The defining clauses of the fac function can thus be understood as algebraic equations:</p>
-<div class="highlight"><pre><span></span><span class="nf">fac</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span>
-<span class="nf">fac</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>                 <span class="c1">-- (a)</span>
-<span class="nf">fac</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1">-- (b)</span>
+<div class="highlight"><pre><span></span><span class="nf">fac</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span>
+<span class="nf">fac</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>                 <span class="c1">-- (a)</span>
+<span class="nf">fac</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1">-- (b)</span>
 </pre></div>
 
 </div>
@@ -13776,13 +13776,13 @@ There are thus no assigments operations. But what about the <code>=</code> sign?
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using these equations we can use <strong>equational reasoning</strong> (aka. term rewrite rules) to understand how a functional program like <code>fac 2</code> is evaluated:</p>
-<div class="highlight"><pre><span></span><span class="nf">fac</span> <span class="mi">2</span> <span class="ow">=</span>
-      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>       <span class="c1">-- expanding (b)</span>
-      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fac</span> <span class="mi">1</span>             <span class="c1">-- computing 2 - 1</span>
-      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1">-- expanding (b)</span>
-      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fac</span> <span class="mi">0</span>             <span class="c1">-- computing 1-1=0 , 2*1=2</span>
-      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>                 <span class="c1">-- expanding (a)</span>
-      <span class="ow">=</span> <span class="mi">2</span>                     <span class="c1">-- computing 2*1=2</span>
+<div class="highlight"><pre><span></span><span class="nf">fac</span> <span class="mi">2</span> <span class="ow">=</span>
+      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>       <span class="c1">-- expanding (b)</span>
+      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fac</span> <span class="mi">1</span>             <span class="c1">-- computing 2 - 1</span>
+      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">fac</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1">-- expanding (b)</span>
+      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fac</span> <span class="mi">0</span>             <span class="c1">-- computing 1-1=0 , 2*1=2</span>
+      <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>                 <span class="c1">-- expanding (a)</span>
+      <span class="ow">=</span> <span class="mi">2</span>                     <span class="c1">-- computing 2*1=2</span>
 </pre></div>
 
 </div>
@@ -13819,7 +13819,7 @@ So you‘ll find these kind of reasoning often in FP.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Lists">Lists<a class="anchor-link" href="#Lists">&#182;</a></h1><p>Working with lists is fundamental to most FP languages.</p>
-<p>A list can either be the empty list (denoted by the data constructor <code>[]</code>) or some first element of a data type <code>a</code> followed by a list with elements of type <code>a</code>, denoted by <code>[a]</code>.
+<p>A list can either be the empty list (denoted by the data constructor <code>[]</code>) or some first element of a data type <code>a</code> followed by a list with elements of type <code>a</code>, denoted by <code>[a]</code>.
 This intuition is reflected in the following data type definition:</p>
 
 </div>
@@ -13828,7 +13828,7 @@ This intuition is reflected in the following data type definition:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="kr">data</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">=</span> <span class="kt">[]</span> <span class="o">|</span> <span class="n">a</span> <span class="kt">:</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="kr">data</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">=</span> <span class="kt">[]</span> <span class="o">|</span> <span class="n">a</span> <span class="kt">:</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
 </pre></div>
 <p>Please note infix cons operator <code>(:)</code> which is declared as a data constructor that builds a list from a single element of type <code>a</code> and a list of type <code>[a]</code>.</p>
 <p>The <code>|</code> separates the possible alternatives to build a List.</p>
@@ -13853,7 +13853,7 @@ This intuition is reflected in the following data type definition:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Pattern-Matching-on-Lists">Pattern Matching on Lists<a class="anchor-link" href="#Pattern-Matching-on-Lists">&#182;</a></h1><p>When working with lists we will typically use the two alternatives of the list data type definition for pattern matching:</p>
-<div class="highlight"><pre><span></span><span class="kr">data</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">=</span> <span class="kt">[]</span> <span class="o">|</span> <span class="n">a</span> <span class="kt">:</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="kr">data</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">=</span> <span class="kt">[]</span> <span class="o">|</span> <span class="n">a</span> <span class="kt">:</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -13863,9 +13863,9 @@ This intuition is reflected in the following data type definition:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For example take the length function that determines the length of a list:</p>
-<div class="highlight"><pre><span></span><span class="nf">length</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">length</span> <span class="kt">[]</span>     <span class="ow">=</span>  <span class="mi">0</span>
-<span class="nf">length</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span>  <span class="mi">1</span> <span class="o">+</span> <span class="n">length</span> <span class="n">xs</span>
+<div class="highlight"><pre><span></span><span class="nf">length</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">length</span> <span class="kt">[]</span>     <span class="ow">=</span>  <span class="mi">0</span>
+<span class="nf">length</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span>  <span class="mi">1</span> <span class="o">+</span> <span class="n">length</span> <span class="n">xs</span>
 </pre></div>
 <p>We can read these equations as: The length of the empty list <code>[]</code> is 0, and the length of a list, whose first element is <code>x</code> and with remainder <code>xs</code>, is 1 plus the length of <code>xs</code>.</p>
 
@@ -13874,7 +13874,7 @@ This intuition is reflected in the following data type definition:</p>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">myList</span> <span class="ow">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -13910,12 +13910,12 @@ This intuition is reflected in the following data type definition:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Algebraic-data-types-(ADTs)">Algebraic data types (ADTs)<a class="anchor-link" href="#Algebraic-data-types-(ADTs)">&#182;</a></h1><p>Most functional languages allows you to create arbitrary data types by combining sum types and product types.</p>
-<div class="highlight"><pre><span></span><span class="c1">-- two simple sum types:</span>
-<span class="kr">data</span> <span class="kt">Status</span> <span class="ow">=</span> <span class="kt">Green</span> <span class="o">|</span> <span class="kt">Yellow</span> <span class="o">|</span> <span class="kt">Red</span>
-<span class="kr">data</span> <span class="kt">Severity</span> <span class="ow">=</span> <span class="kt">Low</span> <span class="o">|</span> <span class="kt">Middle</span> <span class="o">|</span> <span class="kt">High</span>
+<div class="highlight"><pre><span></span><span class="c1">-- two simple sum types:</span>
+<span class="kr">data</span> <span class="kt">Status</span> <span class="ow">=</span> <span class="kt">Green</span> <span class="o">|</span> <span class="kt">Yellow</span> <span class="o">|</span> <span class="kt">Red</span>
+<span class="kr">data</span> <span class="kt">Severity</span> <span class="ow">=</span> <span class="kt">Low</span> <span class="o">|</span> <span class="kt">Middle</span> <span class="o">|</span> <span class="kt">High</span>
 
-<span class="c1">-- a simple product type</span>
-<span class="kr">data</span> <span class="kt">Tuple</span> <span class="ow">=</span> <span class="kt">Tuple</span> <span class="kt">Status</span> <span class="kt">Severity</span>
+<span class="c1">-- a simple product type</span>
+<span class="kr">data</span> <span class="kt">Tuple</span> <span class="ow">=</span> <span class="kt">Tuple</span> <span class="kt">Status</span> <span class="kt">Severity</span>
 </pre></div>
 <p>The complete range of data types that can be constructed in this way is called <strong>algebraic data types</strong> or ADT in short.</p>
 <p>Using algebraic data types has several advantages:</p>
@@ -13932,10 +13932,10 @@ This intuition is reflected in the following data type definition:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1>Using higher order functions for abstraction<br>1. Mapping over a list</h1>
-<div class="highlight"><pre><span></span><span class="c1">-- compute squares for all list elements (squareAll [1,2,3] -&gt; [1,4,9])</span>
-<span class="nf">squareAll</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span>
-<span class="nf">squareAll</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="kt">[]</span>
-<span class="nf">squareAll</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">square</span> <span class="n">n</span> <span class="kt">:</span> <span class="n">squareAll</span> <span class="n">rest</span>
+<div class="highlight"><pre><span></span><span class="c1">-- compute squares for all list elements (squareAll [1,2,3] -&gt; [1,4,9])</span>
+<span class="nf">squareAll</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span>
+<span class="nf">squareAll</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="kt">[]</span>
+<span class="nf">squareAll</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">square</span> <span class="n">n</span> <span class="kt">:</span> <span class="n">squareAll</span> <span class="n">rest</span>
 </pre></div>
 
 </div>
@@ -13944,10 +13944,10 @@ This intuition is reflected in the following data type definition:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="c1">-- double all list elements (doubleAll [1,2,3] -&gt; [2,4,6])</span>
-<span class="nf">doubleAll</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span>
-<span class="nf">doubleAll</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="kt">[]</span>
-<span class="nf">doubleAll</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">double</span> <span class="n">n</span> <span class="kt">:</span> <span class="n">doubleAll</span> <span class="n">rest</span>
+<div class="highlight"><pre><span></span><span class="c1">-- double all list elements (doubleAll [1,2,3] -&gt; [2,4,6])</span>
+<span class="nf">doubleAll</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span>
+<span class="nf">doubleAll</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="kt">[]</span>
+<span class="nf">doubleAll</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">double</span> <span class="n">n</span> <span class="kt">:</span> <span class="n">doubleAll</span> <span class="n">rest</span>
 </pre></div>
 
 </div>
@@ -13957,9 +13957,9 @@ This intuition is reflected in the following data type definition:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We don't want to repeat ourselves so we want something that captures  the essence of mapping a function over a list:</p>
-<div class="highlight"><pre><span></span><span class="nf">map</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
-<span class="nf">map</span> <span class="n">f</span> <span class="kt">[]</span>     <span class="ow">=</span> <span class="kt">[]</span>
-<span class="nf">map</span> <span class="n">f</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">f</span> <span class="n">x</span> <span class="kt">:</span> <span class="n">map</span> <span class="n">f</span> <span class="n">xs</span>
+<div class="highlight"><pre><span></span><span class="nf">map</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+<span class="nf">map</span> <span class="n">f</span> <span class="kt">[]</span>     <span class="ow">=</span> <span class="kt">[]</span>
+<span class="nf">map</span> <span class="n">f</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">f</span> <span class="n">x</span> <span class="kt">:</span> <span class="n">map</span> <span class="n">f</span> <span class="n">xs</span>
 </pre></div>
 
 </div>
@@ -13967,7 +13967,7 @@ This intuition is reflected in the following data type definition:</p>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="c1">-- now squareAll can be defined in terms of map:</span>
@@ -14016,10 +14016,10 @@ This is called declarative style.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1>Using higher order functions for abstraction<br>2. folding / reducing a list</h1>
-<div class="highlight"><pre><span></span><span class="c1">-- sum up a list of numbers: (sum [1,2,3,4] -&gt; 10)</span>
-<span class="nf">sum</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">sum</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="mi">0</span>
-<span class="nf">sum</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">sum</span> <span class="n">rest</span>
+<div class="highlight"><pre><span></span><span class="c1">-- sum up a list of numbers: (sum [1,2,3,4] -&gt; 10)</span>
+<span class="nf">sum</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">sum</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="mi">0</span>
+<span class="nf">sum</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">sum</span> <span class="n">rest</span>
 </pre></div>
 
 </div>
@@ -14028,10 +14028,10 @@ This is called declarative style.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="c1">-- compute the product of a list of numbers: (prod [1,2,3,4] -&gt; 24)</span>
-<span class="nf">prod</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">prod</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="mi">1</span>
-<span class="nf">prod</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">prod</span> <span class="n">rest</span>
+<div class="highlight"><pre><span></span><span class="c1">-- compute the product of a list of numbers: (prod [1,2,3,4] -&gt; 24)</span>
+<span class="nf">prod</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">prod</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="mi">1</span>
+<span class="nf">prod</span> <span class="p">(</span><span class="n">n</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">prod</span> <span class="n">rest</span>
 </pre></div>
 
 </div>
@@ -14040,12 +14040,12 @@ This is called declarative style.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="c1">-- foldr, applied to a binary operator (f), a starting value (z)</span>
-<span class="c1">-- (typically the right-identity of the operator), and a list, </span>
-<span class="c1">-- reduces the list using the binary operator, from right to left:</span>
-<span class="nf">foldr</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">b</span>
-<span class="nf">foldr</span> <span class="n">f</span> <span class="n">z</span> <span class="kt">[]</span>     <span class="ow">=</span>  <span class="n">z</span>
-<span class="nf">foldr</span> <span class="n">f</span> <span class="n">z</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span>  <span class="n">f</span> <span class="n">x</span> <span class="p">(</span><span class="n">foldr</span> <span class="n">f</span> <span class="n">z</span> <span class="n">xs</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="c1">-- foldr, applied to a binary operator (f), a starting value (z)</span>
+<span class="c1">-- (typically the right-identity of the operator), and a list, </span>
+<span class="c1">-- reduces the list using the binary operator, from right to left:</span>
+<span class="nf">foldr</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">b</span>
+<span class="nf">foldr</span> <span class="n">f</span> <span class="n">z</span> <span class="kt">[]</span>     <span class="ow">=</span>  <span class="n">z</span>
+<span class="nf">foldr</span> <span class="n">f</span> <span class="n">z</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span>  <span class="n">f</span> <span class="n">x</span> <span class="p">(</span><span class="n">foldr</span> <span class="n">f</span> <span class="n">z</span> <span class="n">xs</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14055,11 +14055,11 @@ This is called declarative style.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we can define <code>sum</code> and <code>prod</code> as follows:</p>
-<div class="highlight"><pre><span></span><span class="nf">sum</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">sum</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="mi">0</span>
+<div class="highlight"><pre><span></span><span class="nf">sum</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">sum</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="mi">0</span>
 
-<span class="nf">prod</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
-<span class="nf">prod</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="mi">1</span>
+<span class="nf">prod</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Integer</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">prod</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="mi">1</span>
 </pre></div>
 
 </div>
@@ -14079,7 +14079,7 @@ This is called declarative style.</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">import</span> <span class="nn">Data.Monoid</span> <span class="p">(</span><span class="kt">Sum</span> <span class="p">(</span><span class="o">..</span><span class="p">),</span> <span class="kt">Product</span> <span class="p">(</span><span class="o">..</span><span class="p">))</span>
@@ -14153,7 +14153,7 @@ This is called declarative style.</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">a</span> <span class="ow">=</span> <span class="mi">0</span>
@@ -14205,7 +14205,7 @@ This is called declarative style.</p>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">switch</span> <span class="ow">::</span> <span class="p">[(</span><span class="kt">Bool</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="n">a</span>
@@ -14295,25 +14295,25 @@ This sequence is infinite, but luckily it converges quickly towards $\sqrt{a}$.<
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">next</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span>
-<span class="nf">next</span> <span class="n">a</span> <span class="n">x_n</span> <span class="ow">=</span> <span class="p">(</span><span class="n">x_n</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x_n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">next</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span>
+<span class="nf">next</span> <span class="n">a</span> <span class="n">x_n</span> <span class="ow">=</span> <span class="p">(</span><span class="n">x_n</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x_n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
 
-<span class="nf">sequence</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-<span class="nf">sequence</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">=</span> <span class="n">a</span> <span class="kt">:</span> <span class="n">sequence</span> <span class="n">f</span> <span class="p">(</span><span class="n">f</span> <span class="n">a</span><span class="p">)</span>
+<span class="nf">sequence</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="nf">sequence</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">=</span> <span class="n">a</span> <span class="kt">:</span> <span class="n">sequence</span> <span class="n">f</span> <span class="p">(</span><span class="n">f</span> <span class="n">a</span><span class="p">)</span>
 
 <span class="nf">take</span> <span class="mi">10</span> <span class="p">(</span><span class="n">sequence</span><span class="p">(</span><span class="n">next</span> <span class="mi">16</span><span class="p">)</span> <span class="mi">8</span><span class="p">)</span>
 
-<span class="nf">within</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Double</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Double</span>
-<span class="nf">within</span> <span class="n">eps</span> <span class="p">(</span><span class="n">a</span><span class="kt">:</span><span class="n">b</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span>
-    <span class="kr">if</span> <span class="n">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">eps</span> 
-        <span class="kr">then</span> <span class="n">b</span>
-        <span class="kr">else</span> <span class="n">within</span> <span class="n">eps</span> <span class="p">(</span><span class="n">b</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span>
+<span class="nf">within</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Double</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Double</span>
+<span class="nf">within</span> <span class="n">eps</span> <span class="p">(</span><span class="n">a</span><span class="kt">:</span><span class="n">b</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span> <span class="ow">=</span>
+    <span class="kr">if</span> <span class="n">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">eps</span> 
+        <span class="kr">then</span> <span class="n">b</span>
+        <span class="kr">else</span> <span class="n">within</span> <span class="n">eps</span> <span class="p">(</span><span class="n">b</span><span class="kt">:</span><span class="n">rest</span><span class="p">)</span>
 
-<span class="nf">root</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span>
-<span class="nf">root</span> <span class="n">a</span> <span class="n">eps</span> <span class="ow">=</span> <span class="n">within</span> <span class="n">eps</span> <span class="p">(</span><span class="n">sequence</span> <span class="p">(</span><span class="n">next</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nf">root</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span>
+<span class="nf">root</span> <span class="n">a</span> <span class="n">eps</span> <span class="ow">=</span> <span class="n">within</span> <span class="n">eps</span> <span class="p">(</span><span class="n">sequence</span> <span class="p">(</span><span class="n">next</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="nf">root</span> <span class="mi">2</span> <span class="mf">1e-10</span>
 </pre></div>
@@ -14370,7 +14370,7 @@ E.g., we could easily swap in a different validation function that compares the 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Maybe-we&#8216;ve-got-a-problem?">Maybe we&#8216;ve got a problem?<a class="anchor-link" href="#Maybe-we&#8216;ve-got-a-problem?">&#182;</a></h1><p>The <code>Maybe</code> type is helpful in situations where certain operation may not always return a valid result. It is a simple way to avoid NullPointer errors or similar issues with undefined results. Thus, many languages have adopted this data type under different names. In Java for instance, it is called <code>Optional</code>:</p>
-<div class="highlight"><pre><span></span><span class="kr">data</span>  <span class="kt">Maybe</span> <span class="n">a</span>  <span class="ow">=</span>  <span class="kt">Nothing</span> <span class="o">|</span> <span class="kt">Just</span> <span class="n">a</span>
+<div class="highlight"><pre><span></span><span class="kr">data</span>  <span class="kt">Maybe</span> <span class="n">a</span>  <span class="ow">=</span>  <span class="kt">Nothing</span> <span class="o">|</span> <span class="kt">Just</span> <span class="n">a</span>
 </pre></div>
 <p>In FP, it is considered good practise to use <strong>total functions</strong> – that is functions that have defined return values for <em>all</em> possible input values – where ever possible to avoid runtime errors. (Using total functions greatly increases testability and maintainability of code).
 Typical examples for <strong>partial</strong> (i.e. non-total) functions are division and square roots. We can use <strong>Maybe</strong> to make them total:</p>
@@ -14380,7 +14380,7 @@ Typical examples for <strong>partial</strong> (i.e. non-total) functions are div
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">safeDiv</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="kt">Double</span>
@@ -14408,7 +14408,7 @@ Typical examples for <strong>partial</strong> (i.e. non-total) functions are div
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lookup</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="p">[(</span><span class="kt">String</span><span class="p">,</span><span class="kt">Double</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="kt">Double</span>
@@ -14433,7 +14433,7 @@ Typical examples for <strong>partial</strong> (i.e. non-total) functions are div
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="cm">{- HLINT ignore -}</span>
@@ -14491,9 +14491,9 @@ Typical examples for <strong>partial</strong> (i.e. non-total) functions are div
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="One-Maybe-andThen-the-next...">One Maybe <code>andThen</code> the next...<a class="anchor-link" href="#One-Maybe-andThen-the-next...">&#182;</a></h1><p>So we are looking for a way to improve the code by abstracting away the chaining of functions that return <code>Maybe</code> values and providing a way to short circuit the Nothing cases without being so "noisy" when coding.</p>
 <p>We are looking for an operator <code>&gt;&gt;=</code> (speak “and then”) that takes the <code>Maybe</code> result of a first function application as first argument, and a function as second argument that will be used in the <code>Just x</code> case and again returns a <code>Maybe</code> result. In case that the input is <code>Nothing</code> the operator will directly return <code>Nothing</code> without any further processing. In case that the input is <code>Just x</code> the operator will apply the argument function <code>fun</code> to <code>x</code> and return its result:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="o">&gt;&gt;=</span><span class="p">)</span> <span class="ow">::</span> <span class="kt">Maybe</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="n">b</span>
-<span class="kt">Nothing</span>  <span class="o">&gt;&gt;=</span> <span class="n">fun</span> <span class="ow">=</span> <span class="kt">Nothing</span>
-<span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="o">&gt;&gt;=</span> <span class="n">fun</span> <span class="ow">=</span> <span class="n">fun</span> <span class="n">x</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="o">&gt;&gt;=</span><span class="p">)</span> <span class="ow">::</span> <span class="kt">Maybe</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="n">b</span>
+<span class="kt">Nothing</span>  <span class="o">&gt;&gt;=</span> <span class="n">fun</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+<span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="o">&gt;&gt;=</span> <span class="n">fun</span> <span class="ow">=</span> <span class="n">fun</span> <span class="n">x</span>
 </pre></div>
 
 </div>
@@ -14509,7 +14509,7 @@ Typical examples for <strong>partial</strong> (i.e. non-total) functions are div
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">findDivRoot&#39;</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="p">[(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Double</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="kt">Double</span>
