@@ -1,7 +1,7 @@
 # IHaskellExperiments
 experiments with IHaskell
 
-[https://github.com/thma/IHaskellExperiments/blob/main/WhatsAwesomeAboutFunctionalProgramming.ipynb](https://github.com/thma/IHaskellExperiments/blob/main/WhatsAwesomeAboutFunctionalProgramming.ipynb)
+[see it on nbviewer.jupyter.org](https://nbviewer.jupyter.org/github/thma/IHaskellExperiments/blob/main/WhatsAwesomeAboutFunctionalProgramming.ipynb)
 
 to run IHaskell from 
 docker run --rm -p 8888:8888 gibiansky/ihaskell
