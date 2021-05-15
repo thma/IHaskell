@@ -1,6 +1,8 @@
 FROM crosscompass/ihaskell-notebook:latest
 
-RUN conda install -c conda-forge rise
-RUN jupyter nbextension enable rise --py
+ARG EXAMPLES_PATH=/home/$NB_USER/ihaskell_examples
 
-COPY ./WhatsAwesomeAboutFunctionalProgramming.ipynb /ihaskell_examples/WhatsAwesomeAboutFunctionalProgramming.ipynb
+RUN conda install -c conda-forge rise \
+ && jupyter nbextension enable rise --py \
+ && cd $EXAMPLES_PATH \
+ && cp ./WhatsAwesomeAboutFunctionalProgramming.ipynb . 
